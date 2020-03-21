@@ -1,0 +1,32 @@
+import java.awt.*;
+import java.applet.*;
+class gray canvas extends canvas{
+	color gray;
+	public gray canvas(float g){
+		gray = new color(g, g, g);
+		}
+		public void paint(graphics g){
+				dimension size = size();
+				g.setcolor(gray);
+				g.fillrect(0, 0, size.width, size.height);
+				g.setcolor(color.black);
+				g.drawrect(0, 0, size.width-1, size.height-1);
+			}
+		}
+			public class panelDemo extends applet{
+				static final int n=4;
+				public void init(){
+					setlayout(null);
+					int width = integer.parseint(get parameter("width"));
+					int height = integr.parseint(getparameter("height"));
+					for(int i=0; i<n; i++){
+						for(int j=0; j<n; j++){
+						float g = (i*n+j)/(float)(n*n);
+						canvas c = new graycanvas(g);
+						add(c);
+						c.resize(width/n, height/n);
+						c.move(i*width/n, j*height/n);
+					}
+				}
+			}
+		}
